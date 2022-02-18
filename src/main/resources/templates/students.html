@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Student Management System</title>
@@ -17,7 +17,7 @@
             <a th:href = "@{/students/new}" class = "btn btn-primary btn-sm mb-3"> Add Student</a>
         </div>
     </div>
-    <table class="table table-striped table-bordered"></table>
+    <table class="table table-striped table-bordered">
     <thead class="table-dark">
     <tr>
         <th>Student First Name</th>
@@ -35,6 +35,7 @@
         <td th:text="${student.email}"></td>
     </tr>
     </tbody>
+    </table>
 
 </div>
 </body>
