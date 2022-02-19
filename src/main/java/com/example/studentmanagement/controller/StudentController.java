@@ -51,6 +51,7 @@ public class StudentController {
     //we need to bind this id to java variable, in order to that we are going to use @PathVariable
     public String editStudentFrom(@PathVariable Long id, Model model)
     {
-        return "";
+        model.addAttribute("student", studentService.getStudentById(id));
+        return "edit_student";
     }
 }
