@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 //the controller annotation indicates that this particular class serves the role of a controller
@@ -43,5 +44,13 @@ public class StudentController {
     {
         studentService.saveStudent(student);
         return "redirect:/students";
+    }
+
+    @GetMapping("/students/edit/{id}")
+    //we are using path variable annotation to get the {id}
+    //we need to bind this id to java variable, in order to that we are going to use @PathVariable
+    public String editStudentFrom(@PathVariable Long id, Model model)
+    {
+        return "";
     }
 }
